@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+:root {
+    /* media sizes */
+    --media-mobil: 375px;
+    --media-desktop: 1440px;
+
+    /* colors */
+    --primary-purple: hsl(259, 100%, 65%);
+    --primary-light-red: hsl(0,100%,67%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-off-white: hsl(0, 0%, 94%);
+    --neutral-light-gray: hsl(0, 0%, 86%);
+    --neutral-smokey-gray: hsl(0, 1%, 44%);
+    --neutral--off-black: hsl(0, 0%, 8%);
+
+    /* typography */
+    --inputs-font-size: 2rem; /*32px*/
+    --main-font-family: 'Poppins', sans-serif; /* Weights: 400i, 700, 800i */
+
+    /* other content */
+    box-sizing: border-box;
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    color: var(--neutral--off-black);
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    font-family: inherit;
+    color: inherit;  
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral-off-white);
+}
+
+body {
+ flex-direction: column;
+}
+
+/* Attribution to frontend mentor */
+
+.attribution { font-size: 11px; text-align: center; margin-top: 3rem;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* General styles */
+
+.container {
+    display: block; 
+    height: fit-content;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: var(--neutral-white);
+    border-radius: 2rem 2rem 6rem 2rem;
+    width: 320px;
+}
+
+.grid {
+    display: grid;
+}
+
+.col-3 {
+    grid-template-columns: repeat(3, auto);
+}
+
+.row-3 {
+    grid-template-rows: repeat(3, auto);
+}
+
+.purple {
+    color: var(--primary-purple);
+}
+
+.italic {
+    font-weight: 400 !important;
+    font-style: italic !important;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* input section */
+
+#input-sect {
+    padding: 0.5rem;
+    gap: 1rem;
+    margin-top: 2rem;
+    min-width: 300px;
+}
+
+#input-sect div {
+    display: flex;
+    flex-direction: column;
+    min-width: 85px;
+}
+
+#input-sect div * {
+    margin: 0rem;
+    padding: 0;
+    font-size: 0.7rem;
+}
+
+#input-sect div .label {
+    color: var(--neutral-smokey-gray);
+    letter-spacing: 0.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+#input-sect div .input-date {
+    align-self: start;
+    width: 85px;
+    height: 3rem;
+    border: 1px solid var(--neutral-light-gray);
+    border-radius: 0.5rem;
+    text-align: left;
+    text-indent: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--neutral--off-black);
+    appearance: none;
+    -moz-appearance: textfield;
+    cursor: pointer; /* Add cursor style */
+    transition: border-color 0.3s; /* Add transition for smooth color change */
+    caret-color: var(--primary-purple);
+}
+
+#input-sect div .input-date:hover,
+#input-sect div .input-date:focus, /* Add focus state */
+#input-sect div .input-date:active {
+    border: 1px solid var(--primary-purple);
+    outline: none; /* Remove default focus outline */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* divisor section */
+
+#divisor-sect {
+    margin: 0.6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#divisor-sect .image-arrow-down {
+    background-color: var(--primary-purple);
+    border-radius: 100%;
+    padding: 0.8rem;
+    display: block;
+    width: 3.2rem;
+    z-index: 5;
+}
+
+#divisor-sect hr {
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--neutral-light-gray);
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+}
+
+/* result section */
+
+#result-sect {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    width: calc(100%-2.5rem);
+}
+
+#result-sect .answer {
+    padding: 0rem;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 3rem;
+}
+
+.answer span {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* valid and invalid inputs*/
+
+
+div.valid p.invalid-label {
+    z-index: -10;
+}
+
+div.invalid input {  
+    border-color: var(--primary-light-red) !important;
+}
+
+div.invalid p {
+    color: var(--primary-light-red) !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* effects */
+
+.btn:hover .image-arrow-down {
+    background-color: black !important;
+    cursor: pointer;
+}
+
+
+/* media queries for desktop size (>399px)*/
+@media (min-width: 500px) {
+    .container {
+        width: 80%;
+        min-width: 460px;
+        max-width: 550px;
+    }
+
+    #input-sect {
+        margin-left: 3%;
+        justify-content: start;
+        min-width: 370px;
+    }
+
+    #input-sect div .input-date {
+        min-width: 120px;
+    }
+
+    #divisor-sect {
+        align-items: end;
+        margin-left: 3%;
+        margin-right: 2%;
+    }
+
+    #divisor-sect .image-arrow-down {
+        padding: 1rem;
+        width: 4rem;
+    }
+
+    #divisor-sect hr {
+        width: 100%;
+    }
+
+    #result-sect {
+        margin-left: 3%;
+    }
+
+    #result-sect .answer {
+        margin-bottom: 1rem;
+        font-size: 3.5rem;
+    }
+    
+    #result-sect .answer span {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    .invalid-label {
+        font-size: 0.8rem;
+    }
+
+}
